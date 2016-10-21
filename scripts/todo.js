@@ -7,6 +7,8 @@
 //   ボット名 list     - TODO の一覧表示
 //   ボット名 donelist - 完了した TODO の一覧表示
 'use strict';
+var todo;
+var task;
 var todo = require('todo');
 module.exports = (robot) => {
     robot.respond(/todo (.+)/i, (msg) => {
