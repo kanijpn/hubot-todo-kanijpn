@@ -9,17 +9,17 @@
 'use strict';
 var todo = require('todo');
 module.exports = function (robot) {
-    robot.respond(/todo (.+)/i, (msg) => {
+    robot.respond(/todo (.+)/i, function (msg) {
         var task = msg.match[1].trim();
         todo.todo(task);
         msg.send('追加しました: ' + task);
     });
-    robot.respond(/done (.+)/i, (msg) => {
+    robot.respond(/done (.+)/i, function (msg) {
         var task = msg.match[1].trim();
         todo.done(task);
         msg.send('完了にしました: ' + task);
     });
-    robot.respond(/del (.+)/i, (msg) => {
+    robot.respond(/del (.+)/i, function (msg) {
         var task = msg.match[1].trim();
         todo.del(task);
         msg.send('削除しました: ' + task);
